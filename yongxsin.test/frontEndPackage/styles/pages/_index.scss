@@ -1,0 +1,122 @@
+.banner-carousel .owl-dots {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2%;
+}
+
+.banner-carousel.owl-theme .owl-dots .owl-dot span {
+    background: white;
+}
+
+.banner-carousel.owl-theme .owl-dots .owl-dot.active span,
+.banner-carousel.owl-theme .owl-dots .owl-dot:hover span {
+    background: $btn-gray;
+}
+
+.burger-menu {
+    width: 48px;
+    height: 48px;
+    top: 15px;
+    right: 15px;
+    z-index: 99;
+    cursor: pointer;
+    background-color: $title;
+    border-radius: 50%;
+    .burger {
+        position: absolute;
+        background: white;
+        width: 15px;
+        height: 2px;
+        top: 23px;
+        left: 10px;
+        opacity: 1;
+    }
+}
+
+.burger::after,
+.burger::before,
+.burger {
+    transition: all 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 25px;
+    height: 2px;
+    display: block;
+}
+
+.burger::before {
+    top: 10px;
+}
+
+.burger::after {
+    bottom: 10px;
+}
+
+.video-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 280px;
+    @include small {
+        min-height: 350px;
+    }
+    @include medium {
+        min-height: 450px;
+    }
+    @include large {
+        min-height: 550px;
+    }
+    @include xlarge {
+        min-height: 650px;
+    }
+    @include xxlarge {
+        min-height: 750px;
+        max-height: 950px;
+    }
+}
+
+.video {
+    width: 80%;
+    min-height: 200px;
+    @include small {
+        width: 75%;
+        min-height: 250px;
+    }
+    @include medium {
+        min-height: 350px;
+    }
+    @include large {
+        min-height: 450px;
+    }
+    @include xlarge {
+        min-height: 550px;
+    }
+    @include xxlarge {
+        min-height: 650px;
+        max-height: 850px;
+    }
+}
+
+.case h2 {
+    z-index: 1;
+}
+.case h2 span {
+    background-color: $bg-darkgray;
+}
+
+.case h2:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    left: 0%;
+    top: 50%;
+    z-index: -1;
+}

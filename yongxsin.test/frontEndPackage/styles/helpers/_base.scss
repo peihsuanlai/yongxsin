@@ -1,0 +1,43 @@
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    color: $text;
+    @include screen; 
+
+}
+
+.bg-darkgray{
+    background-color:$bg-darkgray ;
+    }
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+}
+
+
+a,
+span {
+    display: inline-block;
+}
+
+
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+
+
+// .data {
+//     background-color: $bg-gray;
+//     margin-top: 60px;
+//     @include large {
+//         margin-top: 80px;
+//     }
+// }
+
+// .bg-gray{
+//     background-color: $bg-gray;
+// }
