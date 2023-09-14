@@ -1,122 +1,200 @@
 .banner-carousel .owl-dots {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 2%;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2%;
 }
 
 .banner-carousel.owl-theme .owl-dots .owl-dot span {
-    background: white;
+  background: white;
 }
 
 .banner-carousel.owl-theme .owl-dots .owl-dot.active span,
 .banner-carousel.owl-theme .owl-dots .owl-dot:hover span {
-    background: $btn-gray;
+  background: $btn-gray;
 }
 
 .burger-menu {
-    width: 48px;
-    height: 48px;
-    top: 15px;
-    right: 15px;
-    z-index: 99;
-    cursor: pointer;
-    background-color: $title;
-    border-radius: 50%;
-    .burger {
-        position: absolute;
-        background: white;
-        width: 15px;
-        height: 2px;
-        top: 23px;
-        left: 10px;
-        opacity: 1;
-    }
+  width: 48px;
+  height: 48px;
+  top: 15px;
+  right: 15px;
+  z-index: 99;
+  cursor: pointer;
+  background-color: $title;
+  border-radius: 50%;
+  .burger {
+    position: absolute;
+    background: white;
+    width: 15px;
+    height: 2px;
+    top: 23px;
+    left: 10px;
+    opacity: 1;
+  }
 }
 
 .burger::after,
 .burger::before,
 .burger {
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .burger::before,
 .burger::after {
-    content: "";
-    position: absolute;
-    background: white;
-    width: 25px;
-    height: 2px;
-    display: block;
+  content: "";
+  position: absolute;
+  background: white;
+  width: 25px;
+  height: 2px;
+  display: block;
 }
 
 .burger::before {
-    top: 10px;
+  top: 10px;
 }
 
 .burger::after {
-    bottom: 10px;
+  bottom: 10px;
 }
 
 .video-bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 280px;
-    @include small {
-        min-height: 350px;
-    }
-    @include medium {
-        min-height: 450px;
-    }
-    @include large {
-        min-height: 550px;
-    }
-    @include xlarge {
-        min-height: 650px;
-    }
-    @include xxlarge {
-        min-height: 750px;
-        max-height: 950px;
-    }
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.video-container {
+  min-height: 230px;
+  @include xsmall {
+    min-height: 310px;
+  }
+  // @include small {
+  //     min-height: 380px;
+  // }
+  @include medium {
+    min-height: 430px;
+  }
+  @include large {
+    min-height: 580px;
+  }
+  @include xlarge {
+    min-height: 680px;
+  }
+  // @include xxlarge {
+  //     min-height: 780px;
+  //     max-height: 930px;
+  // }
 }
 
 .video {
-    width: 80%;
-    min-height: 200px;
-    @include small {
-        width: 75%;
-        min-height: 250px;
-    }
-    @include medium {
-        min-height: 350px;
-    }
-    @include large {
-        min-height: 450px;
-    }
-    @include xlarge {
-        min-height: 550px;
-    }
-    @include xxlarge {
-        min-height: 650px;
-        max-height: 850px;
-    }
+  width: 85%;
+  min-height: 150px;
+  @include xsmall {
+    min-height: 230px;
+  }
+  // @include small {
+  //     min-height: 310px;
+  // }
+  @include medium {
+    min-height: 350px;
+  }
+  @include large {
+    width: 100%;
+    min-height: 500px;
+  }
+  @include xlarge {
+    min-height: 600px;
+  }
+  // @include xxlarge {
+  //     width: 100%;
+  //     min-height: 700px;
+  //     max-height: 850px;
+  // }
 }
 
-.case h2 {
-    z-index: 1;
-}
-.case h2 span {
-    background-color: $bg-darkgray;
-}
-
-.case h2:before {
+.case-area h2,.faq-area h2 {
+  z-index: 1;
+  &:before {
     content: "";
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: white;
     left: 0%;
     top: 50%;
     z-index: -1;
+  }
+}
+
+.case-area h2{
+     &:before{
+        background-color: white; 
+     }
+    span {
+        background-color: $bg-darkgray;
+      }
+}
+
+.faq-area h2{
+    color: $title;
+    &:before{
+        background-color: #000000; 
+     }
+    span {
+        background-color: $bg-gray;
+      }
+}
+
+
+.case-carousel {
+    transform: rotate(90deg);
+    // overflow:hidden;
+    .owl-stage-outer{
+        overflow:visible;
+    }
+  .item {
+    height: auto;
+    width:100%;
+    transform: rotate(-90deg);
+    column-gap: 8%;
+  }
+  .title {
+    min-width: 15%;
+    max-width: 15%;
+    color: $highlight;
+  }
+  .subtitle {
+    min-width: 20%;
+    max-width: 20%;
+  }
+  .text {
+    min-width: 25%;
+    max-width: 25%;
+  }
+}
+.case-carousel .item:not(:last-child) {
+  border-bottom: 1px solid $table-line;
+}
+
+
+.faq-area{
+    .card{
+        border: 1px solid $highlight;
+    }
+    .card-header{
+        border-bottom: 0;
+    }
+    .question-title{
+        color:$text;
+    }
+    .card-body{
+        padding:0 1.25rem 0.75rem 1.75rem;
+    }
+    .know-more{
+      background-color:#000000;
+        color:#ffffff;
+        &:hover{
+            background-color: $text;
+        }
+    }
 }
