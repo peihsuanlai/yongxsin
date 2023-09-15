@@ -3,8 +3,12 @@
 @import "./helpers/mixins";
 @import "./helpers/base";
 @import "./helpers/utilities";
+@import "./helpers/RWD\ editor";
 
-@import "./layout/header";
+@import "./layout/menu";
 @import "./layout/footer";
 
 @import "./pages/index";
+@import "./pages/faq";
+@import "./pages/case";
+@import "./pages/case-info";

@@ -15,49 +15,7 @@
   background: $btn-gray;
 }
 
-.burger-menu {
-  width: 48px;
-  height: 48px;
-  top: 15px;
-  right: 15px;
-  z-index: 99;
-  cursor: pointer;
-  background-color: $title;
-  border-radius: 50%;
-  .burger {
-    position: absolute;
-    background: white;
-    width: 15px;
-    height: 2px;
-    top: 23px;
-    left: 10px;
-    opacity: 1;
-  }
-}
 
-.burger::after,
-.burger::before,
-.burger {
-  transition: all 0.3s ease-in-out;
-}
-
-.burger::before,
-.burger::after {
-  content: "";
-  position: absolute;
-  background: white;
-  width: 25px;
-  height: 2px;
-  display: block;
-}
-
-.burger::before {
-  top: 10px;
-}
-
-.burger::after {
-  bottom: 10px;
-}
 
 .video-bg {
   background-repeat: no-repeat;
@@ -113,7 +71,7 @@
   // }
 }
 
-.case-area h2,.faq-area h2 {
+.case-area h2,.faq-area h2, .case-info-title {
   z-index: 1;
   &:before {
     content: "";
@@ -135,7 +93,7 @@
       }
 }
 
-.faq-area h2{
+.faq-area h2, .case-info-title{
     color: $title;
     &:before{
         background-color: #000000; 
