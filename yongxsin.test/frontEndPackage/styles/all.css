@@ -2075,7 +2075,7 @@ a:hover {
   top: 0px; /* Height of navbar */
   bottom: 0;
   left: 100%;
-  width: 100%;
+  width: 80%;
   z-index: 100;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -2136,10 +2136,18 @@ a:hover {
 }
 
 .switch-label {
-  position: absolute;
+  cursor: pointer;
+  transform: translateY(0px) rotate(180deg);
+  position: fixed;
   right: 15px;
-  top: -20%;
-  transform: translateY(0px);
+  bottom: 2rem;
+}
+@media (min-width: 375px) {
+  .switch-label {
+    position: absolute;
+    bottom: auto;
+    top: -20%;
+  }
 }
 @media (min-width: 1400px) {
   .switch-label {
@@ -2147,12 +2155,29 @@ a:hover {
   }
 }
 
+#bottom-menu-switch:checked + .switch-label {
+  bottom: 10rem;
+  transform: rotate(0deg);
+}
+@media (min-width: 375px) {
+  #bottom-menu-switch:checked + .switch-label {
+    bottom: auto;
+    transform: translateY(-72px) rotate(0deg);
+  }
+}
+
 .bottom-menu {
-  position: absolute;
-  right: 15px;
-  top: -20%;
-  transform: translateY(-80px);
   visibility: hidden;
+  right: 15px;
+  position: fixed;
+  bottom: 1.6rem;
+}
+@media (min-width: 375px) {
+  .bottom-menu {
+    position: absolute;
+    bottom: auto;
+    top: -20%;
+  }
 }
 @media (min-width: 1400px) {
   .bottom-menu {
@@ -2161,14 +2186,8 @@ a:hover {
 }
 
 #bottom-menu-switch:checked ~ .bottom-menu {
-  transform: translateY(0);
   visibility: visible;
 }
-
-#bottom-menu-switch:checked + .switch-label {
-  transform: translateY(-72px) rotate(180deg);
-}
-
 ul.footer-links {
   row-gap: 20px;
   -moz-column-gap: 30px;
@@ -2291,30 +2310,43 @@ ul.footer-links a:hover {
 }
 
 .case-carousel {
-  transform: rotate(90deg);
-}
-.case-carousel .owl-stage-outer {
-  overflow: visible;
+  width: 100%;
+  height: 180px;
 }
 .case-carousel .item {
-  height: auto;
-  width: 100%;
-  transform: rotate(-90deg);
-  -moz-column-gap: 8%;
-       column-gap: 8%;
+  -moz-column-gap: 3%;
+       column-gap: 3%;
+}
+@media (min-width: 768px) {
+  .case-carousel .item {
+    -moz-column-gap: 5%;
+         column-gap: 5%;
+  }
 }
 .case-carousel .title {
-  min-width: 15%;
-  max-width: 15%;
+  min-width: 20%;
+  max-width: 20%;
   color: #deba5c;
 }
 .case-carousel .subtitle {
-  min-width: 20%;
-  max-width: 20%;
-}
-.case-carousel .text {
   min-width: 25%;
   max-width: 25%;
+}
+.case-carousel .text {
+  min-width: 22%;
+  max-width: 22%;
+}
+@media (min-width: 576px) {
+  .case-carousel .text {
+    min-width: 28%;
+    max-width: 28%;
+  }
+}
+@media (min-width: 1200px) {
+  .case-carousel .text {
+    min-width: 30%;
+    max-width: 30%;
+  }
 }
 
 .case-carousel .item:not(:last-child) {
@@ -2333,12 +2365,24 @@ ul.footer-links a:hover {
 .faq-area .card-body {
   padding: 0 1.25rem 0.75rem 1.75rem;
 }
-.faq-area .know-more {
+.faq-area a.know-more {
   background-color: #000000;
   color: #ffffff;
+  z-index: 1;
 }
-.faq-area .know-more:hover {
-  background-color: #5a5a5a;
+.faq-area a.know-more::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: #deba5c;
+  transition: width 0.5s;
+  z-index: -1;
+}
+.faq-area a.know-more:hover::before {
+  width: 100%;
 }
 
 .faq-banner {
@@ -2430,12 +2474,17 @@ ul.footer-links a:hover {
   color: #5a5a5a;
   -moz-column-gap: 3%;
        column-gap: 3%;
+  transition: 0.5s ease-in-out;
 }
 @media (min-width: 768px) {
   .case-list .item a {
     -moz-column-gap: 5%;
          column-gap: 5%;
   }
+}
+.case-list .item a:hover {
+  background-color: #000000;
+  opacity: 0.5;
 }
 .case-list .item:not(:last-child) a {
   border-bottom: 1px solid #cccccc;

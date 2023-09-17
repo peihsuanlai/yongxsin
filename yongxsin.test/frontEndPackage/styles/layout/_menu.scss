@@ -51,7 +51,7 @@
     top: 0px; /* Height of navbar */
     bottom: 0;
     left: 100%;
-    width: 100%;
+    width: 80%;
     z-index: 100;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -117,32 +117,54 @@
 	z-index: -1;
 }
 .switch-label{
-    position: absolute;
+    cursor:pointer;
+    transform: translateY(0px) rotate(180deg);
+    position: fixed;
     right: 15px;
-    top:-20%;
-    transform: translateY(0px);
+    bottom: 2rem;
+    // z-index: 2;
+    @include xsmall{
+        position: absolute;   
+        bottom: auto;   
+        top:-20%;
+    }
     @include xxlarge{
         right: -10%;
     }
-
 }
 
+#bottom-menu-switch:checked + .switch-label{
+    bottom: 10rem;
+    transform: rotate(0deg);
+    @include xsmall{
+        bottom: auto;
+        transform: translateY(-72px) rotate(0deg);
+    }
+   
+} 
+
 .bottom-menu {
-    position: absolute;
-    right: 15px;
-    top:-20%;
-    transform: translateY(-80px);
     visibility: hidden;
+    right: 15px;
+    position: fixed;
+    bottom: 1.6rem;
+   
+    @include xsmall{
+        position: absolute;     
+        bottom: auto; 
+        top:-20%;
+        // transform: translateY(-80px);
+    }  
     @include xxlarge{
         right: -10%;
     }
   
 }
 #bottom-menu-switch:checked ~ .bottom-menu{
-	transform: translateY(0);
     visibility: visible;
+    @include xsmall{
+        // transform: translateY(0);      
+    }
 }
-#bottom-menu-switch:checked + .switch-label{
-    transform: translateY(-72px) rotate(180deg);
-} 
+
 

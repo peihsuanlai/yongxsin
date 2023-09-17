@@ -13,18 +13,25 @@ $(".banner-carousel").owlCarousel({
 //成功案例輪播
 
 
-// $(".case-carousel").owlCarousel({
-//     loop: true,
-//     autoplay: true,
-//     dots: false,
-//     items: 5,
-//     margin:0,
-//     autoplayTimeout: 2000,
+const swiper = new Swiper('.case-carousel', {
+    direction: 'vertical',
+    slidesPerView: 5,
+    // spaceBetween: 5,
+    pauseOnMouseEnter:true,
+    mousewheel: {
+        invert: true,
+      },
+    grabCursor: true,
+   loop: true,
+    autoplay: {
+      delay: 500,
+      disableOnInteraction: false,
+    },
+  });
 
-// });
 
 
-
+//問答頁頁籤
 
 $(".faqtab-carousel").owlCarousel({
     loop: false,

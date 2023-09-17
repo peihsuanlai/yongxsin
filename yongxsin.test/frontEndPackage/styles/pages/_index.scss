@@ -105,29 +105,34 @@
 
 
 .case-carousel {
-    transform: rotate(90deg);
-    // overflow:hidden;
-    .owl-stage-outer{
-        overflow:visible;
-    }
+  width: 100%;
+  height: 180px;
   .item {
-    height: auto;
-    width:100%;
-    transform: rotate(-90deg);
-    column-gap: 8%;
+    column-gap: 3%;
+    @include medium{
+      column-gap: 5%;
+  }
   }
   .title {
-    min-width: 15%;
-    max-width: 15%;
+    min-width: 20%;
+    max-width: 20%;
     color: $highlight;
   }
   .subtitle {
-    min-width: 20%;
-    max-width: 20%;
-  }
-  .text {
     min-width: 25%;
     max-width: 25%;
+  }
+  .text {
+    min-width: 22%;
+    max-width: 22%;
+    @include small{
+        min-width: 28%;
+        max-width: 28%;
+    }
+    @include xlarge{
+        min-width: 30%;
+        max-width: 30%;
+    }
   }
 }
 .case-carousel .item:not(:last-child) {
@@ -148,11 +153,25 @@
     .card-body{
         padding:0 1.25rem 0.75rem 1.75rem;
     }
-    .know-more{
+    a.know-more{
       background-color:#000000;
-        color:#ffffff;
-        &:hover{
-            background-color: $text;
+      color:#ffffff;
+      z-index: 1;
+      &::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: $highlight;
+        transition: width 0.5s;
+        z-index: -1;
+      }
+      &:hover{
+        &::before{  
+          width: 100%;
         }
+      }
     }
 }

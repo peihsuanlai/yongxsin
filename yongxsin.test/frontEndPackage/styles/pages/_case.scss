@@ -13,15 +13,18 @@
         a{
             color: $text;
             column-gap: 3%;
+            transition: 0.5s ease-in-out;
             @include medium{
                 column-gap: 5%;
             }
-
+            &:hover{
+                background-color: #000000;
+                opacity: 0.5;   
+            }
         }
         &:not(:last-child) a{
             border-bottom: 1px solid #cccccc;
-        }
-    
+        }  
         .title{
             color: $highlight;
             min-width: 20%;
@@ -30,7 +33,6 @@
         .subtitle {
             min-width: 25%;
             max-width: 25%;
-
           }
           .text {
             min-width: 22%;
