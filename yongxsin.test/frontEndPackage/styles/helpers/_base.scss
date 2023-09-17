@@ -1,9 +1,7 @@
 body {
     font-family: "Noto Sans TC", sans-serif;
-    color: $text;
-    
+    color: $text;   
     @include screen; 
-
 }
 
 h1,h2,h3,h4,h5{

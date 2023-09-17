@@ -2129,65 +2129,12 @@ a:hover {
   color: #deba5c;
 }
 
-#bottom-menu-switch {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-.switch-label {
-  cursor: pointer;
-  transform: translateY(0px) rotate(180deg);
-  position: fixed;
-  right: 15px;
-  bottom: 2rem;
-}
-@media (min-width: 375px) {
-  .switch-label {
-    position: absolute;
-    bottom: auto;
-    top: -20%;
-  }
-}
-@media (min-width: 1400px) {
-  .switch-label {
-    right: -10%;
-  }
-}
-
-#bottom-menu-switch:checked + .switch-label {
-  bottom: 10rem;
-  transform: rotate(0deg);
-}
-@media (min-width: 375px) {
-  #bottom-menu-switch:checked + .switch-label {
-    bottom: auto;
-    transform: translateY(-72px) rotate(0deg);
-  }
-}
-
 .bottom-menu {
-  visibility: hidden;
-  right: 15px;
   position: fixed;
-  bottom: 1.6rem;
-}
-@media (min-width: 375px) {
-  .bottom-menu {
-    position: absolute;
-    bottom: auto;
-    top: -20%;
-  }
-}
-@media (min-width: 1400px) {
-  .bottom-menu {
-    right: -10%;
-  }
+  bottom: 2rem;
+  right: 15px;
 }
 
-#bottom-menu-switch:checked ~ .bottom-menu {
-  visibility: visible;
-}
 ul.footer-links {
   row-gap: 20px;
   -moz-column-gap: 30px;

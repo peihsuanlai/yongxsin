@@ -129,7 +129,7 @@
             <li>
                 <a href="###">國內外幣清算<span class="material-icons align-top ml-1"> open_in_new </span></a>
             </li>
-            <input type="checkbox" name="" id="bottom-menu-switch" />
+            <!-- <input type="checkbox" name="" id="bottom-menu-switch" />
 
             <label for="bottom-menu-switch" class="switch-label">
               <img src="./frontEndPackage/images/expand.png" alt="expand" />
@@ -146,12 +146,42 @@
                   <img src="./frontEndPackage/images/phone.png" alt="call icon" />
                 </a>
               </li>
-            </ul>
+            </ul> -->
+
+
+<!-- 用juery控制 -->
+            <ul class="d-flex flex-column list-unstyled bottom-menu">
+                <li>
+                    <a class="img-container mb-10 expand" href="###">
+                        <img src="./frontEndPackage/images/expand.png" alt="expand" />
+                    </a>
+                  </li>
+                <li>
+                  <a class="img-container mb-10 d-none line-icon" href="###">
+                    <img src="./frontEndPackage/images/line.png" alt="line icon" />
+                  </a>
+                </li>
+                <li>
+                  <a class="img-container d-none call-icon" href="###">
+                    <img src="./frontEndPackage/images/phone.png" alt="call icon" />
+                  </a>
+                </li>
+              </ul>
+
+
+
+
         </ul>
 
         <footer class="bg-darkgray py-12">
             <div class="container d-flex flex-column flex-md-row justify-content-md-between">
                 <span class="text-white">Copyright © 詠鑫國際行銷有限公司. All rights reserved.</span>
+                <ul class="photonic d-flex list-unstyled mb-0">
+                    <span>傳訊光科技:&nbsp</span>
+                    <li><a target="_blank" class="text-photonic" href="https://shop.photonic.com.tw/" target="_blank">購物車&nbsp</a>/&nbsp</li>
+                    <li><a target="_blank" class="text-photonic" href="https://www.photonic.com.tw/" target="_blank">網頁設計&nbsp</a>/&nbsp</li>
+                    <li><a target="_blank" class="text-photonic" href="http://erp2000.com/" target="_blank">CRM</a></li>
+                </ul>
             </div>
         </footer>
 
@@ -171,7 +201,19 @@
             crossorigin="anonymous"
         ></script>
         <script src="./frontEndPackage/js/offcanvas.js"></script>
+
+
+        
         <script src="./frontEndPackage/owlcarousel/owl.carousel.min.js"></script>
         <script src="./frontEndPackage/js/carousel.js"></script>
+        <script>
+$(".expand").click(function(){
+    $(".line-icon").toggleClass("d-none")
+})
+$(".expand").click(function(){
+    $(".call-icon").toggleClass("d-none")
+})
+
+        </script>
     </body>
 </html>

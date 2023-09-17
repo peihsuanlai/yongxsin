@@ -110,61 +110,67 @@
 
 //懸浮按鈕
 
-
-#bottom-menu-switch{
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
-}
-.switch-label{
-    cursor:pointer;
-    transform: translateY(0px) rotate(180deg);
+.bottom-menu{
     position: fixed;
-    right: 15px;
     bottom: 2rem;
-    // z-index: 2;
-    @include xsmall{
-        position: absolute;   
-        bottom: auto;   
-        top:-20%;
-    }
-    @include xxlarge{
-        right: -10%;
-    }
-}
-
-#bottom-menu-switch:checked + .switch-label{
-    bottom: 10rem;
-    transform: rotate(0deg);
-    @include xsmall{
-        bottom: auto;
-        transform: translateY(-72px) rotate(0deg);
-    }
-   
-} 
-
-.bottom-menu {
-    visibility: hidden;
     right: 15px;
-    position: fixed;
-    bottom: 1.6rem;
+
+}
+
+
+// #bottom-menu-switch{
+// 	position: absolute;
+// 	opacity: 0;
+// 	z-index: -1;
+// }
+// .switch-label{
+//     cursor:pointer;
+//     transform: translateY(0px) rotate(180deg);
+//     position: fixed;
+//     right: 15px;
+//     bottom: 2rem;
+//     @include small{
+//         position: absolute;   
+//         bottom: auto;   
+//         top:-20%;
+//     }
+//     @include xxlarge{
+//         right: -10%;
+//     }
+// }
+
+// #bottom-menu-switch:checked + .switch-label{
+//     bottom: 10rem;
+//     transform: rotate(0deg);
+//     @include small{
+//         bottom: auto;
+//         transform: translateY(-72px) rotate(0deg);
+//     }
    
-    @include xsmall{
-        position: absolute;     
-        bottom: auto; 
-        top:-20%;
-        // transform: translateY(-80px);
-    }  
-    @include xxlarge{
-        right: -10%;
-    }
+// } 
+
+// .bottom-menu {
+//     visibility: hidden;
+//     right: 15px;
+//     position: fixed;
+//     bottom: 1.6rem;
+   
+//     @include small{
+//         position: absolute;     
+//         bottom: auto; 
+//         top:-20%;
+//         // transform: translateY(-80px);
+//     }  
+//     @include xxlarge{
+//         right: -10%;
+//     }
   
-}
-#bottom-menu-switch:checked ~ .bottom-menu{
-    visibility: visible;
-    @include xsmall{
-        // transform: translateY(0);      
-    }
-}
+// }
+// #bottom-menu-switch:checked ~ .bottom-menu{
+//     visibility: visible;
+//     @include xsmall{
+//         // transform: translateY(0);      
+//     }
+// }
 
 
