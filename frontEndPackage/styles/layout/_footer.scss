@@ -1,0 +1,33 @@
+ul.footer-links {
+    row-gap: 20px;
+    column-gap: 30px;
+    a {
+        color: $text;
+        &:hover {
+            color: $highlight;
+        }
+    }
+}
+
+.photonic {
+    a {
+        color: $text;
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+
+.mobile-fixed-footer{
+    width: 100%;
+    height: 72px;
+    background-color: $highlight;
+    opacity: 0.9;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    .mobile-bottom-menu{
+    height: 100%;
+}
+}
