@@ -9,6 +9,14 @@ ul.footer-links {
     }
 }
 
+footer{
+    margin-bottom: 72px;
+    @include medium{
+        margin-bottom: 0px;
+    }
+}
+
+
 .photonic {
     a {
         color: $text;
@@ -19,15 +27,3 @@ ul.footer-links {
 }
 
 
-.mobile-fixed-footer{
-    width: 100%;
-    height: 72px;
-    background-color: $highlight;
-    opacity: 0.9;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
-    .mobile-bottom-menu{
-    height: 100%;
-}
-}

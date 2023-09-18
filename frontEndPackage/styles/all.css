@@ -186,26 +186,26 @@ a:hover {
 }
 
 .desktop-bottom-menu {
-  position: fixed;
+  position: absolute;
   right: 15px;
-  bottom: 35px;
+  top: -18px;
 }
 
 .desktop-page-top-btn {
-  position: fixed;
+  position: absolute;
   border: none;
   right: 15px;
-  bottom: 180px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #373536;
+  top: -90px;
+  background-color: transparent;
 }
 .desktop-page-top-btn .go-to-top {
   font-size: 30px;
   color: white;
+  background-color: #373536;
+  padding: 15px;
+  border-radius: 50%;
 }
-.desktop-page-top-btn:hover, .desktop-page-top-btn:focus {
+.desktop-page-top-btn .go-to-top:hover, .desktop-page-top-btn .go-to-top:focus {
   background-color: #deba5c;
 }
 
@@ -224,6 +224,34 @@ a:hover {
   color: white;
 }
 
+.mobile-fixed-footer {
+  width: 100%;
+  height: 72px;
+  background-color: #deba5c;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+.mobile-fixed-footer .mobile-bottom-menu {
+  height: 100%;
+}
+.mobile-fixed-footer .mobile-bottom-menu a {
+  width: 100%;
+  text-align: center;
+}
+.mobile-fixed-footer .mobile-bottom-menu li:first-child {
+  position: relative;
+}
+.mobile-fixed-footer .mobile-bottom-menu li:first-child::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 72px;
+  right: 0;
+  background-color: white;
+}
+
 ul.footer-links {
   row-gap: 20px;
   -moz-column-gap: 30px;
@@ -236,24 +264,20 @@ ul.footer-links a:hover {
   color: #deba5c;
 }
 
+footer {
+  margin-bottom: 72px;
+}
+@media (min-width: 768px) {
+  footer {
+    margin-bottom: 0px;
+  }
+}
+
 .photonic a {
   color: #5a5a5a;
 }
 .photonic a:hover {
   color: white;
-}
-
-.mobile-fixed-footer {
-  width: 100%;
-  height: 72px;
-  background-color: #deba5c;
-  opacity: 0.9;
-  position: fixed;
-  bottom: 0;
-  z-index: 10;
-}
-.mobile-fixed-footer .mobile-bottom-menu {
-  height: 100%;
 }
 
 .banner-carousel .owl-dots {
